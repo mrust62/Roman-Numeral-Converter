@@ -15,12 +15,16 @@ int main()
     cout << "Please enter the Roman Numeral you want converted. (in all Caps)\n";
     cin >> romanNumeral;
 
-    int num = romanNumeral.length();
+    int romanSize = romanNumeral.length();
 
-    cout << "The Numeral was: " + num;
+    cout << "The Numeral was: " << romanNumeral.length() << endl;
 
-    string romanSplit[] = {"a"};
+    
+    for (int i = romanNumeral.length() - 1; i >= 0; i--)
+    {
+        cout << "Letter" << i << ": " << romanNumeral[i] << endl;
+    }
 
-
+    
 }
 
