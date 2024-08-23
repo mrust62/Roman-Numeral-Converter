@@ -13,21 +13,13 @@ int main()
     string romanTemp;
     int convertedValue = 0;
 
-
     cout << "Please enter the Roman Numeral you want converted. (in all Caps)\n";
     cin >> romanNumeral;
-
-    int romanSize = romanNumeral.length();
-
-    cout << "The Numeral was: " << romanNumeral.length() << endl;
-    
     
     for (int i = romanNumeral.length() - 1; i >= 0; i--)
     {
-        cout << "Letter" << i << ": " << romanNumeral[i] << endl;
-        romanTemp = romanNumeral[i];
-
         
+        romanTemp = romanNumeral[i];
 
         if (romanTemp.compare("I") == 0)
         {
@@ -68,6 +60,11 @@ int main()
                 convertedValue += 40;
                 i--;
             }
+            else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0)
+            {
+                cout << "INVALID NUMERAL";
+                return 0;
+            }
             else
             {
                 convertedValue += 50;
@@ -80,6 +77,11 @@ int main()
             {
                 convertedValue += 90;
                 i--;
+            }
+            else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0)
+            {
+                cout << "INVALID NUMERAL";
+                return 0;
             }
             else
             {
@@ -94,6 +96,11 @@ int main()
                 convertedValue += 400;
                 i--;
             }
+            else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0 || romanTemp.compare("X") == 0)
+            {
+                cout << "INVALID NUMERAL";
+                return 0;
+            }
             else
             {
                 convertedValue += 500;
@@ -107,11 +114,21 @@ int main()
                 convertedValue += 900;
                 i--;
             }
+            else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0 || romanTemp.compare("X") == 0)
+            {
+                cout << "INVALID NUMERAL";
+                return 0;
+            }
             else
             {
                 convertedValue += 1000;
                 
             }
+        }
+        else
+        {
+            cout << "INVALID NUMERAL";
+            return 0;
         }
     }
     cout << convertedValue;
