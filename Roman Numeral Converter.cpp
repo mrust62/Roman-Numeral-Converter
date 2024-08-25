@@ -1,5 +1,6 @@
 //Roman Numeral Converter
 //Written By Matthew Rust, 8/22/2024
+//Limited to 3999 as any of the numerals with a "-" above them can not be typed
 
 #include <iostream>
 #include <string>
