@@ -30,7 +30,7 @@ int main()
 			}
 			else if (romanTemp.compare("V") == 0)
 			{
-				if (i == 0)
+				if (i == 0) // to prevent the code from trying to access a non-existent -1 spot in the string
 				{
 					convertedValue += 5;
 				}
@@ -62,6 +62,11 @@ int main()
 						convertedValue += 9;
 						i--;
 					}
+					else if (romanTemp.compare("V") == 0)
+					{
+						cout << "INVALID NUMERAL" << endl;
+						break;
+					}
 					else
 					{
 						convertedValue += 10;
@@ -84,8 +89,8 @@ int main()
 					}
 					else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0)
 					{
-						cout << "INVALID NUMERAL";
-						return 0;
+						cout << "INVALID NUMERAL" << endl;
+						break;
 					}
 					else
 					{
@@ -109,8 +114,8 @@ int main()
 					}
 					else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0)
 					{
-						cout << "INVALID NUMERAL";
-						return 0;
+						cout << "INVALID NUMERAL" << endl;
+						break;
 					}
 					else
 					{
@@ -134,8 +139,8 @@ int main()
 					}
 					else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0 || romanTemp.compare("X") == 0)
 					{
-						cout << "INVALID NUMERAL";
-						return 0;
+						cout << "INVALID NUMERAL" << endl;
+						break;
 					}
 					else
 					{
@@ -159,8 +164,8 @@ int main()
 					}
 					else if (romanTemp.compare("I") == 0 || romanTemp.compare("V") == 0 || romanTemp.compare("X") == 0)
 					{
-						cout << "INVALID NUMERAL";
-						return 0;
+						cout << "INVALID NUMERAL" << endl;
+						break;
 					}
 					else
 					{
@@ -171,12 +176,15 @@ int main()
 			}
 			else
 			{
-				cout << "INVALID NUMERAL";
-				return 0;
+				cout << "INVALID NUMERAL" << endl;
+				break;
 			}
 		}
-		cout << convertedValue << endl;
 
+		if (convertedValue > 0) //prevents the display of 0 if input is invalid
+		{
+			cout << convertedValue << endl;
+		}
 		cout << "Would you like to convert another numeral? (y/n)" << endl;
 		string input;
 		cin >> input;
